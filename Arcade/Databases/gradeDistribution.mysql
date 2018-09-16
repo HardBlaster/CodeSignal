@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE gradeDistribution()
+BEGIN
+	select Name, ID
+    from Grades
+    where (Final > (0.5*Midterm1+0.5*Midterm2) and Final > (0.25*Midterm1+0.25*Midterm2+0.5*Final))
+    order by left(Name,3), ID asc;
+END
