@@ -1,0 +1,8 @@
+/*Please add ; after each select statement*/
+CREATE PROCEDURE projectsTeam()
+BEGIN
+	select name
+    from projectLog
+    group by name
+    order by name asc;
+END
