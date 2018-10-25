@@ -1,0 +1,11 @@
+CREATE PROCEDURE movieDirectors()
+BEGIN
+	select director
+    from (
+        select director, sum(oscars) as osc
+        from moviesInfo
+        where year > 2000
+        group by director) as bab
+    where bab.osc > 2
+    order by director asc;
+END
