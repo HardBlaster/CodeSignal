@@ -1,0 +1,6 @@
+CREATE PROCEDURE nullIntern()
+BEGIN
+	select count(*) as number_of_nulls
+    from departments
+    where description is NULL or lower(description) regexp '^[[:blank:]]*(null|nil|\-)[[:blank:]]*$';
+END
