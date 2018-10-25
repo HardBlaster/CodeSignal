@@ -1,0 +1,6 @@
+CREATE PROCEDURE travelDiary()
+BEGIN
+	select group_concat(distinct country
+                        order by country asc separator ';') as countries
+    from diary;
+END
