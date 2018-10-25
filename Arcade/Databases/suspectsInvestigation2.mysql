@@ -1,0 +1,7 @@
+CREATE PROCEDURE suspectsInvestigation2()
+BEGIN
+	select id, name, surname
+    from Suspect 
+    where height<=170 or lower(name) not like 'b%' or lower(surname) not like 'gre_n'
+    order by id asc;
+END
